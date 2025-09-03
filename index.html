@@ -456,6 +456,9 @@
           <a href="#" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="projet">
             <i data-lucide="folder-open" class="w-4 h-4"></i><span>Mon projet</span>
           </a>
+          <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="fichiers">
+            <i data-lucide="upload" class="w-4 h-4"></i><span>Fichiers</span>
+          </a>
           <a href="#" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="chat">
             <i data-lucide="message-square" class="w-4 h-4"></i><span>Chat</span>
           </a>
@@ -496,6 +499,9 @@
         </a>
         <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="projet">
           <i data-lucide="folder-open" class="w-4 h-4"></i><span>Mon projet</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="fichiers">
+          <i data-lucide="upload" class="w-4 h-4"></i><span>Fichiers</span>
         </a>
         <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50" data-tab="chat">
           <i data-lucide="message-square" class="w-4 h-4"></i><span>Chat</span>
@@ -1193,50 +1199,110 @@
 
     <!-- FICHIERS -->
     <div id="fichiers" class="tabs">
-      <div class="space-y-8">
+      <!-- Header -->
+      <div class="nova-card p-8 bg-white rounded-2xl shadow">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2" style="color: #8C52FE;">
+          Espace de dépôt & livraison
+        </h1>
+        <p class="text-lg text-gray-500">
+          Centralisez tous vos fichiers projet en un seul endroit
+        </p>
+      </div>
 
-        <div class="card">
-          <h2>Fichiers déposés et livrés</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+        <!-- Client Files -->
+        <div class="nova-card bg-white rounded-2xl shadow">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="upload" class="w-5 h-5 text-blue-500"></i>
+              <h3 class="font-semibold">Vos fichiers envoyés</h3>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">Documents et assets que vous avez partagés avec l'équipe</p>
+          </div>
+          <div class="p-6 space-y-4">
+            <!-- Exemple fichier -->
 
-          <h3>📥 Vos fichiers envoyés</h3>
-          <ul class="file-list">
-            <li class="file-item">
-              <span class="file-name">📄 logo_company.png</span>
-              <span class="file-link">Télécharger</span>
-            </li>
-            <li class="file-item">
-              <span class="file-name">📄 brief_client.docx</span>
-              <span class="file-link">Télécharger</span>
-            </li>
-            <li class="file-item">
-              <span class="file-name">📄 copywriting_v1.txt</span>
-              <span class="file-link">Télécharger</span>
-            </li>
-          </ul>
+            <!-- Brief-Webinaire.docx -->
+            <div class="p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="flex items-start justify-between">
+                <div class="flex items-start space-x-3">
+                  <i data-lucide="file-text" class="w-5 h-5 text-red-500"></i>
+                  <div>
+                    <h4 class="font-medium text-sm">Brief-Webinaire.docx</h4>
+                    <p class="text-xs text-gray-500 mt-1">Document avec les objectifs et le public cible</p>
+                    <div class="flex items-center space-x-2 mt-2 text-xs text-gray-500">
+                      <span>1.2 MB</span> • <span>15 juillet 2025</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="px-2 py-1 border rounded text-sm hover:bg-gray-100">
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
 
-          <h3>📦 Fichiers livrés par l’agence</h3>
-          <ul class="file-list">
-            <li class="file-item">
-              <span class="file-name">📄 wireframe_v2.pdf</span>
-              <span class="file-link">Télécharger</span>
-            </li>
-            <li class="file-item">
-              <span class="file-name">🔗 maquette.fig</span>
-              <span class="file-link">Ouvrir</span>
-            </li>
-            <li class="file-item">
-              <span class="file-name">🔗 webflow.ai-boost.com</span>
-              <span class="file-link">Visiter</span>
-            </li>
-            <li class="file-item">
-              <span class="file-name">📦 archive_v2.zip</span>
-              <span class="file-link">Télécharger</span>
-            </li>
-          </ul>
-
-          <button class="btn btn-outline">Télécharger tout</button>
-          <p>Tous vos fichiers, au bon endroit, au bon moment.</p>
+            <!-- Bouton ajouter -->
+            <button class="w-full bg-gradient-to-r to-indigo-500 text-white rounded-lg px-4 py-2 flex items-center justify-center" style="background-color: #8C52FE;">
+              <i data-lucide="upload" class="w-4 h-4 mr-2"></i> Ajouter un fichier
+            </button>
+          </div>
         </div>
+
+        <!-- Delivered Files -->
+        <div class="nova-card bg-white rounded-2xl shadow">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="download" class="w-5 h-5 text-blue-500"></i>
+              <h3 class="font-semibold">Fichiers livrés par l'agence</h3>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">Livrables créés par l'équipe NovaSpace</p>
+          </div>
+          <div class="p-6 space-y-4">
+            <!-- Exemple livrable -->
+
+            <!-- Maquette-Figma-V2.fig -->
+            <div class="p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="flex items-start justify-between">
+                <div class="flex items-start space-x-3">
+                  <i data-lucide="image" class="w-5 h-5 text-purple-500"></i>
+                  <div>
+                    <div class="flex items-center space-x-2">
+                      <h4 class="font-medium text-sm">Maquette-Figma-V2.fig</h4>
+                      <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">V2</span>
+                      <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded">✓ Validé</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">Design complet validé par le client</p>
+                    <div class="flex items-center space-x-2 mt-2 text-xs text-gray-500">
+                      <span>12.5 MB</span> • <span>22 juillet 2025</span> • <span>Sophie - NovaSpace</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="px-2 py-1 border rounded text-sm hover:bg-gray-100">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </button>
+                  <button class="px-2 py-1 border rounded text-sm hover:bg-gray-100">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" data-tab="chat" class="w-full bg-gradient-to-r to-indigo-500 justify-center flex items-center px-4 py-2 rounded-lg text-white text-sm font-medium shadow" style="background-color: #8C52FE;">
+                <i ></i> Laisser un feedback
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="nova-card p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl shadow mt-8">
+        <h3 class="text-lg font-semibold mb-2">💡 Organisation optimale</h3>
+        <p class="text-sm text-gray-500">
+          Tous vos fichiers sont organisés automatiquement par version et étape de projet. 
+          Vous retrouvez facilement l'historique complet de votre collaboration.
+        </p>
       </div>
     </div>
 
@@ -1408,7 +1474,7 @@
             <!-- Member 1 -->
             <div class="p-4 border border-gray-100 rounded-lg hover:bg-gray-50 transition-colors">
               <div class="flex items-start space-x-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium" style="background-color: #8C52FE;">S</div>
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium" style="background-color: #8C52FE;">D</div>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center justify-between">
                     <h4 class="font-medium text-sm">Dimo</h4>
